@@ -154,20 +154,6 @@ class Robot():
     
 
     def steering_angle(self, speed, sharpness, angle):
-        ''' Steers the robot with a certain angle and speed
-
-        Args:
-            speed: the speed of the steering
-            sharpness: the sharpness or urgency
-            angle: the angle the robot is aiming to stop at
-        '''
-        big = angle + 1
-        small = angle - 1
-        while self.gyro.angle() <= small or self.gyro.angle() >= big:
-            self.tank.drive(speed, sharpness)
-        self.brake()
-
-        def steering_angle(self, speed, sharpness, angle):
         ''' Steers the robot forward with `speed` and `sharpness` until a certain angle
 
         Preconditions:
